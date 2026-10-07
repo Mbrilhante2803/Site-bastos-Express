@@ -84,6 +84,17 @@
                 <button type="submit" class="btn-reservar">Buscar e Reservar Passagens</button>
             </form>
             <div id="mensagemReserva" class="mensagem-oculta"></div>
+
+            <div id="pixContainer" class="pix-container" style="display: none;">
+                <h3>Pagamento via PIX</h3>
+                <p>Escaneie o QR Code abaixo ou utilize a opção "Copia e Cola" no app do seu banco:</p>
+                <img id="pixQrCode" src="" alt="QR Code do PIX" style="max-width: 200px; margin: 15px 0;" />
+                <div>
+                    <label for="pixCopiaCola">Pix Copia e Cola:</label>
+                    <textarea id="pixCopiaCola" readonly rows="4" style="width: 100%; margin-top: 5px; resize: none;"></textarea>
+                    <button type="button" id="btnCopiarPix" class="btn-reservar" style="margin-top: 10px; width: 100%;">Copiar Código</button>
+                </div>
+            </div>
         </section>
     </main>
 

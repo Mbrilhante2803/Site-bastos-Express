@@ -179,6 +179,22 @@ input:focus {
     border: 1px solid #c3e6cb;
 }
 
+.mensagem-erro {
+    display: block;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.pix-container {
+    margin-top: 25px;
+    padding: 20px;
+    border: 2px dashed var(--secondary-color);
+    border-radius: 8px;
+    background-color: var(--bg-light);
+    text-align: center;
+}
+
 /* Seleção de Assentos */
 .selecao-assentos {
     margin-top: 20px;
