@@ -1,0 +1,340 @@
+:root {
+    --primary-color: #1b2a47; /* Azul Escuro da Logo */
+    --secondary-color: #f37a32; /* Laranja da Logo */
+    --text-color: #333333;
+    --bg-light: #f4f4f4;
+    --white: #ffffff;
+    --whatsapp-color: #25d366;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    height: 80px;
+    width: auto;
+    border-radius: 8px; /* Optional, adds a slight rounding if the logo allows */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+/* Main Content */
+main {
+    padding: 40px 0;
+}
+
+section {
+    background-color: var(--white);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* History Section */
+.historia-content p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+/* Booking Section */
+.reservas-section p {
+    margin-bottom: 20px;
+}
+
+.reserva-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row .form-group:first-child {
+    margin-right: 20px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 51, 102, 0.3);
+}
+
+.btn-reservar {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: 10px;
+}
+
+.btn-reservar:hover {
+    background-color: #d8621b;
+}
+
+.btn-reservar:active {
+    transform: scale(0.98);
+}
+
+.mensagem-oculta {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.mensagem-sucesso {
+    display: block;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Seleção de Assentos */
+.selecao-assentos {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.onibus-layout {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 2 assentos, 1 corredor, 2 assentos */
+    gap: 10px;
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 350px;
+    margin: 10px auto;
+}
+
+.onibus-layout .corredor {
+    width: 20px; /* Space for the aisle */
+}
+
+.assento {
+    background-color: #fff;
+    border: 2px solid var(--primary-color);
+    border-bottom: 5px solid var(--primary-color);
+    border-radius: 15px 15px 4px 4px;
+    padding: 10px 5px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    user-select: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.assento:hover:not(.ocupado) {
+    background-color: var(--bg-light);
+    transform: scale(1.05);
+}
+
+.assento.selecionado {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border-color: var(--secondary-color);
+}
+
+.assento.ocupado {
+    background-color: #a0a0a0;
+    border-color: #707070;
+    color: #555;
+    cursor: not-allowed;
+}
+
+.legenda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.legenda span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    margin-left: 15px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+.legenda .livre {
+    background-color: #fff;
+    border-color: var(--primary-color);
+}
+
+.legenda .selecionado {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.legenda .ocupado {
+    background-color: #a0a0a0;
+    border-color: #707070;
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: var(--whatsapp-color);
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    color: #FFF;
+}
+
+.my-float {
+    margin-top: 16px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 5px 10px;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-row .form-group:first-child {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+    }
+}
