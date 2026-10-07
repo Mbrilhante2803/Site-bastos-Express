@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bastos Express - Transporte de Ônibus</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome for WhatsApp icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="#"><img src="assets/logo.jpeg" alt="Logo Bastos Express" class="header-logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#historia">Nossa História</a></li>
+                    <li><a href="#reservas">Reservar Passagens</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="historia" class="historia-section">
+            <h2>Nossa História</h2>
+            <div class="historia-content">
+                <p>
+                    Bem-vindo à <strong>Bastos Express</strong>! Desde a nossa fundação, temos o compromisso de oferecer um transporte rodoviário de qualidade, segurança e conforto.
+                    A nossa empresa nasceu do sonho de conectar pessoas e lugares, encurtando distâncias e aproximando famílias.
+                </p>
+                <p>
+                    Ao longo dos anos, crescemos e nos tornamos uma referência no transporte de ônibus.
+                    Com uma frota moderna, poltronas confortáveis e uma equipe de motoristas experientes e dedicados, estamos sempre prontos para levar você ao seu destino com a máxima tranquilidade e pontualidade.
+                    Viaje conosco e sinta a diferença!
+                </p>
+            </div>
+        </section>
+
+        <section id="reservas" class="reservas-section">
+            <h2>Reservar Passagens</h2>
+            <p>Preencha os dados abaixo para consultar a disponibilidade e reservar sua passagem.</p>
+            <form id="reservaForm" class="reserva-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="origem">Origem:</label>
+                        <input type="text" id="origem" name="origem" required placeholder="Cidade de origem">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="destino">Destino:</label>
+                        <input type="text" id="destino" name="destino" required placeholder="Cidade de destino">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="dataIda">Data da Viagem:</label>
+                        <input type="date" id="dataIda" name="dataIda" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="passageiros">Número de Passageiros:</label>
+                        <input type="number" id="passageiros" name="passageiros" min="1" max="10" value="1" required>
+                    </div>
+                </div>
+
+                <div class="selecao-assentos">
+                    <label>Selecione seu(s) assento(s):</label>
+                    <div class="onibus-layout" id="onibusLayout">
+                        <!-- Assentos serão gerados por JavaScript -->
+                    </div>
+                    <p class="legenda">
+                        <span class="livre"></span> Livre
+                        <span class="selecionado"></span> Selecionado
+                        <span class="ocupado"></span> Ocupado
+                    </p>
+                    <input type="hidden" id="assentosSelecionados" name="assentosSelecionados" value="">
+                </div>
+
+                <button type="submit" class="btn-reservar">Buscar e Reservar Passagens</button>
+            </form>
+            <div id="mensagemReserva" class="mensagem-oculta"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Bastos Express. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <!-- Coloque o número do WhatsApp da secretaria, no formato: 55 + DDD + Numero -->
+    <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20tirar%20uma%20dúvida%20sobre%20as%20passagens%20da%20Bastos%20Express!" class="whatsapp-float" target="_blank" title="Fale com nossa secretaria no WhatsApp">
+        <i class="fab fa-whatsapp my-float"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
